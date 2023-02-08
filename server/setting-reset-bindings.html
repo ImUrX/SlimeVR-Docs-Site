@@ -1,0 +1,395 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js latte">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Setting up Reset Bindings - SlimeVR Docs</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href=".././theme/catppuccin.css">
+        <link rel="stylesheet" href=".././theme/catppuccin-highlight.css">
+        <link rel="stylesheet" href=".././theme/custom.css">
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches
+                ? "ayu"
+                : "latte";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('latte')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">User Guide</li><li class="chapter-item expanded "><a href="../slimevr101.html">SlimeVR 101</a></li><li class="chapter-item expanded "><a href="../server/index.html">SlimeVR Setup</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../server/initial-setup.html">Initial Setup</a></li><li class="chapter-item expanded "><a href="../server/connecting-trackers.html">Connecting your Trackers</a></li><li class="chapter-item expanded "><a href="../server/configuring-trackers.html">Configuring your Trackers</a></li><li class="chapter-item expanded "><a href="../server/putting-on-trackers.html">Putting on your Trackers</a></li><li class="chapter-item expanded "><a href="../server/body-config.html">Body Proportions Configuration</a></li><li class="chapter-item expanded "><a href="../server/setting-reset-bindings.html" class="active">Setting up Reset Bindings</a></li><li class="chapter-item expanded "><a href="../server/osc-information.html">OSC</a></li></ol></li><li class="chapter-item expanded "><a href="../misc/survey.html">SlimeVR Experience Survey</a></li><li class="chapter-item expanded "><a href="../common-issues.html">Common Issues</a></li><li class="chapter-item expanded "><a href="../safety-guides.html">Safety Guide</a></li><li class="chapter-item expanded affix "><li class="part-title">DIY Guide</li><li class="chapter-item expanded "><a href="../diy/index.html">DIY Trackers</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../diy/components-guide.html">Components Guide</a></li><li class="chapter-item expanded "><a href="../diy/cases.html">Community-built Cases</a></li><li class="chapter-item expanded "><a href="../diy/tracker-schematics.html">Tracker Schematics</a></li><li class="chapter-item expanded "><a href="../diy/imu-comparison.html">IMU Comparison</a></li><li class="chapter-item expanded "><a href="../diy/diy-straps.html">DIY Straps Guide</a></li></ol></li><li class="chapter-item expanded "><a href="../firmware/index.html">Uploading the Tracker's Firmware</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../firmware/setup-and-install.html">Setting up the Environment</a></li><li class="chapter-item expanded "><a href="../firmware/configuring-project.html">Configuring the Firmware</a></li><li class="chapter-item expanded "><a href="../firmware/upload-firmware.html">Building and Uploading the Firmware</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Advanced User Guide</li><li class="chapter-item expanded "><a href="../tools/index.html">Applications and Variants</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../tools/owoTrack.html">owoTrack App</a></li><li class="chapter-item expanded "><a href="../tools/slimevr-wrangler.html">SlimeVR Wrangler</a></li><li class="chapter-item expanded "><a href="../tools/termux-installation.html">Termux Setup</a></li><li class="chapter-item expanded "><a href="../tools/linux-installation.html">SlimeVR on Linux</a></li><li class="chapter-item expanded "><a href="../tools/lime-slimes.html">L,i,me-Slimes</a></li><li class="chapter-item expanded "><a href="../tools/shadowpc.html">ShadowPC with SlimeVR</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><a href="../misc/contributors.html">Contributors</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="latte">Latte (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="frappe">Frappé</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="macchiato">Macchiato</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mocha">Mocha</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">SlimeVR Docs</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this page" aria-label="Print this page">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/SlimeVR/SlimeVR-Docs-Site" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/SlimeVR/SlimeVR-Docs-Site/edit/main/src/server/setting-reset-bindings.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this docs ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="setting-up-reset-bindings"><a class="header" href="#setting-up-reset-bindings">Setting up Reset Bindings</a></h1>
+<p>Reset bindings are one of the most essential features to set up for an enhanced experience.
+Allowing you to reset in a matter of seconds or less.
+In this guide we'll show you how to set them up.</p>
+<h1 id="table-of-contents"><a class="header" href="#table-of-contents">Table of Contents</a></h1>
+<ul>
+<li><a href="#what-is-a-reset">What is a Reset?</a></li>
+<li><a href="#which-reset-type-to-use">Which Reset Type to Use?</a>
+<ul>
+<li><a href="#reset">Reset:</a></li>
+<li><a href="#fast-reset">Fast Reset</a></li>
+</ul>
+</li>
+<li><a href="#feeder-app">Feeder App</a>
+<ul>
+<li><a href="#setup">Setup</a></li>
+</ul>
+</li>
+<li><a href="#keyboard-shortcuts">Keyboard Shortcuts</a>
+<ul>
+<li><a href="#ovr-advanced-settings-bindings">OVR Advanced Settings Bindings</a></li>
+<li><a href="#ovr-toolkit">OVR Toolkit</a></li>
+<li><a href="#warning">Warning</a></li>
+<li><a href="#notes">Notes</a></li>
+</ul>
+</li>
+</ul>
+<h1 id="what-is-a-reset"><a class="header" href="#what-is-a-reset">What is a Reset?</a></h1>
+<p>A reset is the action of resetting the slimeVR skeleton model to a default pose.
+This is needed to mitigate any drift you may experience overtime.
+You have the option of reset or fast reset, whichever you use depends on your situation.
+Reset will do a full reset where by you have to stand straight, look forward and reset (with standard 6 point tracking it is not required to t-pose).
+A fast reset is used to clear drift, and only resets the axis along which drift occurs.
+Now that you know what a reset is, let's set up a fast way to trigger these resets!</p>
+<h1 id="which-reset-type-to-use"><a class="header" href="#which-reset-type-to-use">Which Reset Type to Use?</a></h1>
+<p>The type of reset is completely dependent on your position or circumstances.</p>
+<h2 id="reset"><a class="header" href="#reset">Reset:</a></h2>
+<p>A standard reset is used to completely restore your skeleton model to it's default pose.
+This is done by standing up straight, looking forward and performing the reset.
+This can only works as intended when standing up.</p>
+<h2 id="fast-reset"><a class="header" href="#fast-reset">Fast Reset</a></h2>
+<p>A fast reset only resets/corrects for any potential drift on one axis.
+Whilst less accurate this allows you to reset whilst sitting/laying down.
+It is recommended to straighten your limbs and look forward whilst doing this for optimal results.
+This method makes it possible to not have to get up every time you have to reset.</p>
+<h1 id="feeder-app"><a class="header" href="#feeder-app">Feeder App</a></h1>
+<p>To set up reset bindings for SlimeVR you can use the <a href="https://github.com/SlimeVR/SlimeVR-Feeder-App">feeder-app</a>, which is included by default in the SlimeVR-Installer version 0.1.5 and up.
+If you are running an outdated version of SlimeVR without the feeder app, you can download the <a href="https://slimevr.dev/download">latest version</a> and install it.
+This makes setting up reset bindings a lot easier.
+You can use the included video for a visual guide on how to set up the reset bindings.</p>
+<h2 id="setup"><a class="header" href="#setup">Setup</a></h2>
+<p>To set up reset bindings using the feeder-app you do the following:</p>
+<ol>
+<li>Head over to your SteamVR settings (make sure &quot;Advanced Settings&quot; is enabled).</li>
+<li>Go to Controllers &gt; &quot;Show old binding UI&quot; &gt; &quot;show more applications&quot;.</li>
+<li>Scroll down and select &quot;SlimeVR-Feeder-App&quot;.</li>
+<li>Pick a button on your controller to use for the reset binding.</li>
+<li>Now you can set up a key combination or behavior to perform: &quot;Reset&quot; or &quot;Fast Reset&quot;. (see video for clarification)</li>
+</ol>
+<p>And you're done!
+You're now all set up to have blazingly fast resets.
+<em>Fastest reset in the west</em>.</p>
+<p>You can set this up in whatever way works for you!
+Most people opt for either a double tap, long press or button combinations/chords.
+This choice is totally up to you.</p>
+<div class="video-container">
+<iframe width="100%" height="auto" src="https://www.youtube.com/embed/iTOyCOT44d0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<h1 id="keyboard-shortcuts"><a class="header" href="#keyboard-shortcuts">Keyboard Shortcuts</a></h1>
+<p>The SlimeVR Server has the following default key bindings:</p>
+<ul>
+<li><code>CTRL+ALT+SHIFT+U</code> for Quick reset.</li>
+<li><code>CTRL+ALT+SHIFT+Y</code> for Reset.</li>
+</ul>
+<p>These keybindings can be configured by editing the following line of the <code>vrconfig.yml</code> file:</p>
+<pre><code class="language-yaml">keybindings: {reset: CTRL+ALT+SHIFT+Y, quickReset: CTRL+ALT+SHIFT+U}
+</code></pre>
+<p>If you want to be able to bind these to your controller, you will need an additional application such as <a href="https://store.steampowered.com/app/1009850/OVR_Advanced_Settings/">OVR Advanced Settings</a> (Free) or <a href="https://store.steampowered.com/app/1068820/OVR_Toolkit/">OVR Toolkit</a> (Paid, $12 USD).</p>
+<h3 id="ovr-advanced-settings-bindings"><a class="header" href="#ovr-advanced-settings-bindings">OVR Advanced Settings Bindings</a></h3>
+<p>Make sure OVR Advanced Settings is closed before following these steps or you will encounter problems.</p>
+<ol>
+<li>
+<p>In the Windows Explorer window, enter <code>%appdata%/AdvancedSettings-Team/OVR Advanced Settings.ini</code> in <strong>Address bar</strong> and press Enter. Notepad with the <code>OVR Advanced Settings.ini</code> file contents should open.</p>
+</li>
+<li>
+<p>Find the <code>keyboardOne</code> and <code>keyboardTwo</code> lines and replace them with the following lines:</p>
+<pre><code class="language-ini">keyboardOne=^*&gt;y ; CTRL+ALT+SHIFT+Y - Reset
+keyboardTwo=^*&gt;u ; CTRL+ALT+SHIFT+U - Quick reset
+</code></pre>
+<blockquote>
+<p><strong>Note:</strong> If you changed default SlimeVR Server key bindings, refer to <a href="https://github.com/OpenVR-Advanced-Settings/OpenVR-AdvancedSettings/blob/master/docs/keyboard_input_guide.md">Keyboard Input Guide</a>.</p>
+</blockquote>
+</li>
+<li>
+<p>In SteamVR Dashboard, open OVR Advanced Settings and select <strong>Bindings</strong>. If you don't see the icon for OVR Advanced Settings on your dashboard, try running OVR Advanced Settings from your Steam library and check if the icon appeared on your dashboard.</p>
+</li>
+<li>
+<p>In the opened window, select the <strong>Misc</strong> tab.</p>
+</li>
+<li>
+<p>Double-click the plus sign near the desired button name to add a binding.</p>
+</li>
+<li>
+<p>In the opened dialog window, select <strong>BUTTON</strong>.</p>
+</li>
+<li>
+<p>Click <strong>None</strong> near the desired button action. To see more button actions, click <strong>Show more</strong>.</p>
+</li>
+<li>
+<p>In the opened <strong>Boolean Actions</strong> window, select <strong>Keyboard Shortcut One</strong>.</p>
+</li>
+<li>
+<p>Repeat previous two steps for <strong>Keyboard Shortcut Two</strong>.</p>
+</li>
+</ol>
+<div class="video-container">
+<iframe width="100%" height="auto" src="https://www.youtube.com/embed/KuCjmHBpH7E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<h3 id="ovr-toolkit"><a class="header" href="#ovr-toolkit">OVR Toolkit</a></h3>
+<p>If you do not wish to bind keyboard shortcuts directly to your controller buttons, OVR Toolkit's &quot;wristwatch&quot; has Macro functionality that can be used to trigger Resets and Quick Resets.</p>
+<p>Demo GIF:</p>
+<p><img src="../assets/img/ovrtDemo.gif" alt="img" /></p>
+<ol>
+<li>Open the OVR Toolkit settings. It may be in the <a href="../assets/img/ovrtTray.webp">system tray.</a></li>
+<li>Click on &quot;Settings&quot; on the top, then &quot;Setup Wrist Macros&quot; on the right.</li>
+<li>Click on &quot;Macro Icons&quot; at the bottom, this will open a folder that you can place PNGs for custom macro icons. Download and copy these two icon files for the resets into there. <a href="../assets/img/resetBold.png">Reset Icon.</a> <a href="../assets/img/quickresetBold.png">Quick Reset Icon.</a></li>
+<li>Close and re-open OVR Toolkit, otherwise the icons won't show up yet.</li>
+<li>Click &quot;Add Macro&quot;, and click &quot;Add key press&quot; until you have enough for each key of the binding. (Default needs 4).</li>
+<li>For each key in sequence, click &quot;Rebind&quot; and then push one of the binding's buttons once. Having the letter as the bottom key is important, as that is the order the keys are pressed. Entering <code>Y+CTRL+ALT+SHIFT</code> would not work, but <code>CTRL+ALT+SHIFT+Y</code> would.</li>
+<li>Click the blank icon square on the left side of the entry, and choose the corresponding icon. (To differentiate, Reset is the basic reset symbol. Quick Reset has the flame in the middle.)</li>
+<li>Repeat steps 5-7 for the other binding.</li>
+<li>Click &quot;Save Changes&quot;, and then check the Macros tab on your OVR Toolkit wristwatch for your new bindings! (You may need to restart OVR Toolkit!)</li>
+</ol>
+<p>Example GIF of adding the Quick Reset binding:</p>
+<p><img src="../assets/img/ovrtMacro.gif" alt="img" /></p>
+<h4 id="warning"><a class="header" href="#warning">Warning</a></h4>
+<p>Currently the SlimeVR server resets the positions the instant the binding is pressed, which is not ideal if you are looking down at your extended arms. However, this can be overcome with a simple AutoHotKey script until a configuration option is added to add a countdown to those bindings. Save this script with a <code>.ahk</code> extension.</p>
+<p>If you want this script to also start up with Windows, right click it, Create Shortcut, and copy that shortcut to <code>C:/Users/&lt;YourUsername&gt;/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Startup</code></p>
+<pre><code class="language-ahk">#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
+; #Warn  ; Enable warnings to assist with detecting common errors.
+SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
+SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
+
+; Reset
+$^+!y::
+SoundBeep
+Sleep 3000
+SoundBeep
+SoundBeep
+SoundBeep
+Send, ^!+y
+return
+
+; Quick Reset
+$^+!u::
+SoundBeep
+Sleep 3000
+SoundBeep
+SoundBeep
+Send, ^!+u
+return
+
+; The beeps are just for extra feedback and can be safely removed.
+</code></pre>
+<h2 id="notes"><a class="header" href="#notes">Notes</a></h2>
+<ul>
+<li>If you reset your playspace (for example long pressing Oculus button on Quest), you will need to do a <a href="#reset-trackers">tracker reset</a>.</li>
+<li>OpenVR Advanced Settings' keybinds may not work well in certain languages. If this is the case for you, start SteamVR with your system's language set to English.</li>
+<li>SlimeVR Server uses <a href="https://adoptium.net/releases.html?variant=openjdk11&amp;jvmVariant=hotspot">Java 11</a>.</li>
+<li>If you need the SlimeVR Steam driver you can find it <a href="https://github.com/SlimeVR/SlimeVR-OpenVR-Driver/releases/latest/download/slimevr-openvr-driver-win64.zip">here</a>.</li>
+</ul>
+<p><em>Created by Eiren, edited by adigyran#1121, CalliePepper#0666, Smeltie#1999, Emojikage#3095 and Tony#9719, styled by CalliePepper#0666. Videos created by ZRock35#9574. OVRT GIFs created by Tony#9719.</em></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../server/body-config.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../server/osc-information.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../server/body-config.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../server/osc-information.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+
+
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </body>
+</html>

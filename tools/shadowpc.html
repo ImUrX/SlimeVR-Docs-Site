@@ -1,0 +1,265 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js latte">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>ShadowPC with SlimeVR - SlimeVR Docs</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href=".././theme/catppuccin.css">
+        <link rel="stylesheet" href=".././theme/catppuccin-highlight.css">
+        <link rel="stylesheet" href=".././theme/custom.css">
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches
+                ? "ayu"
+                : "latte";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('latte')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">User Guide</li><li class="chapter-item expanded "><a href="../slimevr101.html">SlimeVR 101</a></li><li class="chapter-item expanded "><a href="../server/index.html">SlimeVR Setup</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../server/initial-setup.html">Initial Setup</a></li><li class="chapter-item expanded "><a href="../server/connecting-trackers.html">Connecting your Trackers</a></li><li class="chapter-item expanded "><a href="../server/configuring-trackers.html">Configuring your Trackers</a></li><li class="chapter-item expanded "><a href="../server/putting-on-trackers.html">Putting on your Trackers</a></li><li class="chapter-item expanded "><a href="../server/body-config.html">Body Proportions Configuration</a></li><li class="chapter-item expanded "><a href="../server/setting-reset-bindings.html">Setting up Reset Bindings</a></li><li class="chapter-item expanded "><a href="../server/osc-information.html">OSC</a></li></ol></li><li class="chapter-item expanded "><a href="../misc/survey.html">SlimeVR Experience Survey</a></li><li class="chapter-item expanded "><a href="../common-issues.html">Common Issues</a></li><li class="chapter-item expanded "><a href="../safety-guides.html">Safety Guide</a></li><li class="chapter-item expanded affix "><li class="part-title">DIY Guide</li><li class="chapter-item expanded "><a href="../diy/index.html">DIY Trackers</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../diy/components-guide.html">Components Guide</a></li><li class="chapter-item expanded "><a href="../diy/cases.html">Community-built Cases</a></li><li class="chapter-item expanded "><a href="../diy/tracker-schematics.html">Tracker Schematics</a></li><li class="chapter-item expanded "><a href="../diy/imu-comparison.html">IMU Comparison</a></li><li class="chapter-item expanded "><a href="../diy/diy-straps.html">DIY Straps Guide</a></li></ol></li><li class="chapter-item expanded "><a href="../firmware/index.html">Uploading the Tracker's Firmware</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../firmware/setup-and-install.html">Setting up the Environment</a></li><li class="chapter-item expanded "><a href="../firmware/configuring-project.html">Configuring the Firmware</a></li><li class="chapter-item expanded "><a href="../firmware/upload-firmware.html">Building and Uploading the Firmware</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Advanced User Guide</li><li class="chapter-item expanded "><a href="../tools/index.html">Applications and Variants</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../tools/owoTrack.html">owoTrack App</a></li><li class="chapter-item expanded "><a href="../tools/slimevr-wrangler.html">SlimeVR Wrangler</a></li><li class="chapter-item expanded "><a href="../tools/termux-installation.html">Termux Setup</a></li><li class="chapter-item expanded "><a href="../tools/linux-installation.html">SlimeVR on Linux</a></li><li class="chapter-item expanded "><a href="../tools/lime-slimes.html">L,i,me-Slimes</a></li><li class="chapter-item expanded "><a href="../tools/shadowpc.html" class="active">ShadowPC with SlimeVR</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><a href="../misc/contributors.html">Contributors</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="latte">Latte (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="frappe">Frappé</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="macchiato">Macchiato</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mocha">Mocha</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">SlimeVR Docs</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this page" aria-label="Print this page">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/SlimeVR/SlimeVR-Docs-Site" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/SlimeVR/SlimeVR-Docs-Site/edit/main/src/tools/shadowpc.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this docs ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="shadowpc-with-slimevr"><a class="header" href="#shadowpc-with-slimevr">ShadowPC with SlimeVR</a></h1>
+<p>ShadowPC is a cloud computer solution that locks in your USB peripherals for a seamless experience.
+By offloading everything to the cloud you don't need a powerful gaming rig to get a playable experience.</p>
+<hr />
+<h2 id="how-to-use-slimevr-with-shadow-pc"><a class="header" href="#how-to-use-slimevr-with-shadow-pc">How to use SlimeVR with Shadow PC.</a></h2>
+<p>Required components and software:</p>
+<ul>
+<li>A HMD with great virtual desktop support like the Oculus quest 2.</li>
+<li>An active shadow pc subscription.</li>
+<li>A client for shadow pc that supports usb forwarding like a windows pc with shadow's official app or a virtual here license with an always on computer. A raspberry pi works.</li>
+<li>A usb to Ethernet adapter. It's possible to use a usb WiFi adapter that supports windows 10 hotspot functionality, however ethernet tends to be more reliable.</li>
+<li>A license for virtual desktop.</li>
+<li>A device that can stay awake while you're in vr that supports the official shadow pc client, for example an iPad.</li>
+<li>A fast 5ghz WiFi router that also supports 2.4ghz, almost any dual band router should suffice.</li>
+<li>An Ethernet cable and free Ethernet port at your router for the usb to Ethernet adapter.</li>
+</ul>
+<p>Steps to setup:</p>
+<ol>
+<li>Log in to shadow pc, install:</li>
+</ol>
+<ul>
+<li>virtual desktop streamer</li>
+<li>steam</li>
+<li>steam vr</li>
+<li>any desired steam vr game</li>
+<li>the slime vr server</li>
+<li>virtual here (if you need it if usb forwarding does not work for your shadow client)</li>
+</ul>
+<ol start="2">
+<li>Connect the lan cable and ensure the usb forwarding is set up for that adapter.</li>
+<li>Shadow pc should show a new Ethernet connection in the network and sharing center.</li>
+<li>Make sure that the connection is set to private, keep shadows main Ethernet connection alone.</li>
+<li>Once all of slimes are connected to your WiFi router that the Ethernet cable is also connected to, launch slime vr server on shadow pc. The slimes should show up and be reporting their rotation data.</li>
+<li>Configure slimes following the official documentation.</li>
+<li>Launch your vr game and enjoy.</li>
+</ol>
+<p>To improve performance make the shadow pc official client only use 5mbps max of bandwidth.
+Disabling video buffering in virtual desktop helped the most for vr gameplay.
+Having a fast connection will improve your experience.
+For usb forwarding the upload is the most important.</p>
+<p><em>This guide was written by a community member, ShadowPC is not affiliated with SlimeVR.</em></p>
+<p><em>Original write up: BlaineAM#5575, Edited for Docs usage by: Smeltie#1999.</em></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../tools/lime-slimes.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../misc/contributors.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../tools/lime-slimes.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../misc/contributors.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+
+
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </body>
+</html>
